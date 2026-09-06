@@ -2,7 +2,7 @@
 
 用于《AI大模型应用与工程实践》的本地个人/小组实训案例。支持PDF解析与OCR、BM25检索、带出处问答、最近3轮上下文、章节总结、练习测验、学习记录和复习计划。
 
-Streamlit Community Cloud 部署时会读取根目录的 `packages.txt`，安装 OCR/OpenCV 所需的 Linux `libgl1` 系统库。
+Streamlit Community Cloud 部署时会读取根目录的 `packages.txt`，安装 OCR/OpenCV 所需的 Linux `libgl1` 与 `libglib2.0-0` 系统库。
 
 本实例共用一份学习数据库，未实现登录和跨学生隔离。请每人或每组独立运行；AI批改仅供练习参考。
 
