@@ -102,6 +102,20 @@ class ValidationTests(unittest.TestCase):
     def test_remote_error_not_leaked(self):
         self.assertNotIn("secret", model_error_message(RuntimeError("secret")))
 
+    def test_remote_error_is_classified_without_raw_message(self):
+        class APIConnectionError(Exception):
+            pass
+
+        message = model_error_message(APIConnectionError("secret endpoint detail"))
+        self.assertIn("APIConnectionError", message)
+        self.assertNotIn("secret endpoint detail", message)
+
+        bad_request = RuntimeError("secret request body")
+        bad_request.status_code = 400
+        message = model_error_message(bad_request)
+        self.assertIn("HTTP 400", message)
+        self.assertNotIn("secret request body", message)
+
 
 class StateTests(unittest.TestCase):
     def test_same_name_same_length_changed_content(self):
