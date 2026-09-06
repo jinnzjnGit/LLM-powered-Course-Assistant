@@ -1,0 +1,17 @@
+.venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+*.pyc
+.streamlit/
+data/uploads/
+data/index/
+data/*.db
+data/*.db-*
+data/backups/
+data/
+*.log
+*.baiduyun.uploading.cfg

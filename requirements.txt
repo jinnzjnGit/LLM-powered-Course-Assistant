@@ -1,0 +1,8 @@
+# 与本次验证环境一致的直接依赖；完整环境见requirements-lock.txt
+streamlit==1.62.0
+python-dotenv==1.2.3
+pypdf==5.9.0
+openai==1.109.1
+PyMuPDF==1.28.2
+rapidocr-onnxruntime==1.4.4
+numpy==2.5.2
